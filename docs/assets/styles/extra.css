@@ -1,0 +1,169 @@
+/* ── Design Tokens ──────────────────────────────────────────────────────── */
+:root {
+  /* Neutral ramp */
+  --neutral-0: #ffffff;
+  --neutral-10: #f2f2f2;
+  --neutral-90: #2c2c2c;
+  --neutral-100: #181818;
+
+  /* Primary green ramp */
+  --primary-10: #edf7f6;
+  --primary-40: #83c8bf;
+  --primary-50: #60b9ac;
+  --primary-60: #469f93;
+  --primary-70: #377c72;
+  --primary-80: #275951;
+  --primary-90: #173531;
+}
+
+/* ── Light Mode: Background & Accent ────────────────────────────────────── */
+[data-md-color-scheme="default"],
+:root {
+  --md-default-bg-color: var(--neutral-0);
+  --md-primary-fg-color: var(--primary-70);
+  --md-accent-fg-color: var(--primary-70);
+  --md-typeset-a-color: var(--primary-70);
+  --md-code-bg-color: #f4f6f5;
+  --md-code-fg-color: #2c2c2c;
+}
+
+/* ── Dark Mode: Background & Accent ─────────────────────────────────────── */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--neutral-100);
+  --md-primary-fg-color: var(--primary-50);
+  --md-accent-fg-color: var(--primary-50);
+  --md-typeset-a-color: var(--primary-50);
+  --md-code-bg-color: #242626;
+  --md-code-fg-color: #e2e8e7;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────── */
+.md-button {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.md-button--primary {
+  background-color: var(--primary-70);
+  border-color: var(--primary-70);
+  color: var(--neutral-0) !important;
+}
+
+.md-button--primary:hover {
+  background-color: var(--primary-80);
+  border-color: var(--primary-80);
+}
+
+.md-button:not(.md-button--primary) {
+  border-color: var(--primary-70);
+  color: var(--primary-70);
+}
+
+.md-button:not(.md-button--primary):hover {
+  background-color: var(--primary-10);
+  border-color: var(--primary-80);
+  color: var(--primary-80);
+}
+
+[data-md-color-scheme="slate"] .md-button--primary {
+  background-color: var(--primary-50);
+  border-color: var(--primary-50);
+  color: var(--neutral-100) !important;
+}
+
+[data-md-color-scheme="slate"] .md-button--primary:hover {
+  background-color: var(--primary-40);
+  border-color: var(--primary-40);
+}
+
+[data-md-color-scheme="slate"] .md-button:not(.md-button--primary) {
+  border-color: var(--primary-50);
+  color: var(--primary-50);
+}
+
+[data-md-color-scheme="slate"] .md-button:not(.md-button--primary):hover {
+  background-color: var(--primary-90);
+  border-color: var(--primary-40);
+  color: var(--primary-40);
+}
+
+/* ── Logo Size ──────────────────────────────────────────────────────────── */
+.md-header__button.md-logo {
+  padding: 0.15rem;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2.2rem;
+  width: auto;
+}
+
+.md-nav__button.md-logo img,
+.md-nav__button.md-logo svg {
+  height: 2.5rem;
+  width: auto;
+}
+
+/* ── Hero & Landing Page Elements ───────────────────────────────────────── */
+.hero-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem 0;
+  flex-wrap: wrap;
+}
+
+.hero-buttons .md-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+}
+
+.landing-image {
+  border-radius: 8px;
+  border: 1px solid var(--neutral-20);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+[data-md-color-scheme="slate"] .landing-image {
+  border-color: #333333;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+/* ── Admonitions (encadrés) ─────────────────────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details {
+  padding: 0.3rem 1.2rem;
+  font-size: 0.72rem;
+  line-height: 1.7;
+  border-radius: 0.5rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+[dir=ltr] .md-typeset .admonition-title,
+[dir=ltr] .md-typeset summary {
+  padding-left: 1.9rem;
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  width: 1.1rem;
+  height: 1.1rem;
+  top: 0.1em;
+}
+
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  background-color: #eaf1fd;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.note,
+[data-md-color-scheme="slate"] .md-typeset details.note {
+  background-color: #448aff1f;
+}

@@ -1,0 +1,138 @@
+[project]
+site_name = "Documentation Agora Calyce"
+site_description = "Bonnes pratiques et procédures pour les déploiements sur la console d'Agora Calyce"
+docs_dir = "docs"
+site_dir = "site"
+site_url = "https://docs.agoracalyce.net"
+copyright = "Copyright &copy; 2026 Agora Calyce"
+extra_css = ["assets/styles/extra.css"]
+
+nav = [
+  {"Accueil" = "index.md"},
+  {"Introduction" = [
+    "01-introduction/01-presentation.md",
+    "01-introduction/02-concepts.md",
+  ]},
+  {"Prise en main" = [
+    "02-prise-en-main/01-login.md",
+    "02-prise-en-main/02-dashboard.md",
+    "02-prise-en-main/03-demarrage-rapide.md",
+  ]},
+  {"Administration" = [
+    "03-administration/01-son-compte.md",
+    "03-administration/02-creation-organisation.md",
+    "03-administration/03-partager-organisation.md",
+    "03-administration/04-users-groups-droits.md",
+    "03-administration/06-transfert-organisation.md",
+    "03-administration/07-audit-log.md",
+    "03-administration/05-creation-projet.md",
+  ]},
+  {"Utilisation" = [
+    {"Instance" = [
+      "04-utilisation/01-instance/01-creation-from-scratch.md",
+      "04-utilisation/01-instance/02-guide-linux.md",
+      "04-utilisation/01-instance/03-guide-windows.md",
+      "04-utilisation/01-instance/04-creation-snapshot.md",
+    ]},
+    {"Storage" = [
+      "04-utilisation/02-storage/01-creation-disque.md",
+      "04-utilisation/02-storage/02-classes-de-stockage.md",
+      "04-utilisation/02-storage/03-snapshot-disque.md",
+    ]},
+    {"Network" = [
+      "04-utilisation/03-network/01-creer-vpc.md",
+      "04-utilisation/03-network/02-creer-subnet.md",
+      "04-utilisation/03-network/03-creer-eip.md",
+      "04-utilisation/03-network/04-load-balancer.md",
+      "04-utilisation/03-network/05-security-group.md",
+    ]},
+    {"Sauvegarde" = [
+      "04-utilisation/04-sauvegarde/01-faire-sauvegarde.md",
+    ]},
+  ]},
+  {"PaaS" = [
+    {"Kubernetes" = [
+      "05-paas/01-kaas/01-creer-cluster.md",
+      "05-paas/01-kaas/02-acceder-cluster.md",
+      "05-paas/01-kaas/03-exposer-cluster.md",
+      "05-paas/01-kaas/04-mettre-a-jour-cluster.md",
+    ]},
+  ]},
+  {"Object Storage" = [
+    "06-object-storage/01-creation-bucket.md",
+    "06-object-storage/02-configuration-avancee-bucket.md",
+  ]},
+  {"Guides" = [
+    "07-how-tos/01-firewall.md",
+  ]}
+]
+
+[project.theme]
+language = "fr"
+logo = "assets/logo.svg"
+favicon = "assets/logo.svg"
+features = [
+  "announce.dismiss",
+  "navigation.top",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.path",
+  "navigation.tracking",
+  "navigation.instant",
+  "navigation.instant.progress",
+  "toc.follow",
+  "search.suggest",
+  "search.highlight",
+  "search.share",
+  "content.code.copy",
+  "content.code.annotate",
+  "content.tabs.link",
+  "content.tooltips",
+]
+
+[project.theme.icon.admonition]
+note = "lucide/paperclip"
+
+[project.theme.font]
+text = "Host Grotesk"
+code = "JetBrains Mono"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "white"
+accent = "blue"
+
+[project.theme.palette.toggle]
+icon = "lucide/sun"
+name = "Basculer en mode sombre"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "black"
+accent = "blue"
+
+[project.theme.palette.toggle]
+icon = "lucide/moon"
+name = "Basculer en mode clair"
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+md_in_html = {}
+tables = {}
+footnotes = {}
+pymdownx.details = {}
+pymdownx.superfences = {}
+pymdownx.inlinehilite = {}
+toc.permalink = true
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.tabbed.alternate_style = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.quotes.callouts = true
+zensical.extensions.glightbox.auto_caption = true
