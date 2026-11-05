@@ -37,3 +37,7 @@ Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour plus de détails.
 - `docs/` : contenu de la documentation (Markdown, images)
 - `overrides/` : surcharges du thème (bandeau d'annonce)
 - `zensical.toml` : configuration du site et navigation
+
+## Licence
+
+Distribué sous licence [Apache 2.0](LICENSE).
