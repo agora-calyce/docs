@@ -72,7 +72,7 @@ nav = [
 
 [project.theme]
 language = "fr"
-custom_dir = "overrides"
+#custom_dir = "overrides"
 logo = "assets/logo.svg"
 favicon = "assets/logo.svg"
 features = [
