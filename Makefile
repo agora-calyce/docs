@@ -1,9 +1,15 @@
-IMAGE ?= harbor.agoracalyce.net/build-pages/agora-spx-docs
-IMAGE_CLIENT ?= harbor.agoracalyce.net/build-pages/agora-spx-docs-client
-TAG ?= latest
+ZENSICAL ?= docker run --rm -it -p 8000:8000 -v "$(CURDIR)":/docs zensical/zensical:0.0.57
 MDLINT ?= docker run --rm -v "$(CURDIR)":/workdir davidanson/markdownlint-cli2:v0.18.1
 
-.PHONY: build run push build-client run-client push-client lint-md format-md
+.PHONY: serve build lint-md format-md
+
+# Serve the site locally on http://localhost:8000
+serve:
+	$(ZENSICAL) serve -a 0.0.0.0:8000
+
+# Build the site in site/ (fails on warnings)
+build:
+	$(ZENSICAL) build --strict
 
 # Check Markdown list formatting (config: .markdownlint-cli2.yaml)
 lint-md:
@@ -12,21 +18,3 @@ lint-md:
 # Fix Markdown list formatting in place
 format-md:
 	$(MDLINT) --fix
-
-build:
-	docker build -f docker/Dockerfile -t $(IMAGE):$(TAG) .
-
-run: build
-	docker run --rm -it -p 8080:8080 $(IMAGE):$(TAG)
-
-push: build
-	docker push $(IMAGE):$(TAG)
-
-build-client:
-	docker build -f docker/Dockerfile.client -t $(IMAGE_CLIENT):$(TAG) .
-
-run-client: build-client
-	docker run --rm -it -p 8081:8080 $(IMAGE_CLIENT):$(TAG)
-
-push-client: build-client
-	docker push $(IMAGE_CLIENT):$(TAG)

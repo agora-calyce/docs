@@ -1,0 +1,11 @@
+# Markdown checks for the docs. Only list rules are on, since zensical needs 4-space nested lists and a blank line before a list.
+# Check: make lint-md    Auto-fix: make format-md
+config:
+  default: false
+  MD004: { style: dash } # "-" for bullet lists
+  MD005: true            # same indentation for items at the same level
+  MD007: { indent: 4 }   # nested lists indented by 4 spaces
+  MD032: true            # blank line before and after lists
+
+globs:
+  - "docs/**/*.md"

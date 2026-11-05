@@ -4,6 +4,9 @@ site_description = "Bonnes pratiques et procédures pour les déploiements sur l
 docs_dir = "docs"
 site_dir = "site"
 site_url = "https://docs.agoracalyce.net"
+repo_url = "https://github.com/agora-calyce/docs"
+repo_name = "agora-calyce/docs"
+edit_uri = "edit/main/docs/"
 copyright = "Copyright &copy; 2026 Agora Calyce"
 extra_css = ["assets/styles/extra.css"]
 
@@ -69,6 +72,7 @@ nav = [
 
 [project.theme]
 language = "fr"
+custom_dir = "overrides"
 logo = "assets/logo.svg"
 favicon = "assets/logo.svg"
 features = [
@@ -86,9 +90,13 @@ features = [
   "search.share",
   "content.code.copy",
   "content.code.annotate",
+  "content.action.edit",
   "content.tabs.link",
   "content.tooltips",
 ]
+
+[project.theme.icon]
+repo = "fontawesome/brands/github"
 
 [project.theme.icon.admonition]
 note = "lucide/paperclip"

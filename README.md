@@ -1,19 +1,39 @@
-# Documentation de la console d'Agora Calyce
+# Documentation de la console Agora Calyce
 
-Documentation des bonnes pratiques et procédures pour les déploiements et migrations sur la console d'Agora Calyce.
+Documentation et guides d'utilisation de la [console Agora Calyce](https://console.agoracalyce.com), générée avec [Zensical](https://zensical.org/).
 
-Documentation et guide d'utilisation pour la [console d'Agora Calycé](https://console.agoracalyce.net), créer par [Zensical](https://zensical.org/)
+Site publié : <https://docs.agoracalyce.net>
 
-## Developpement
+## Développement local
+
+Avec Docker :
+
+```bash
+make serve      # sert le site sur http://localhost:8000
+make build      # build le site dans site/ (échoue en cas d'avertissement)
+make lint-md    # vérifie le formatage Markdown
+make format-md  # corrige le formatage Markdown
+```
+
+Sans Docker :
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate # or .venv\Scripts\activate on Windows
+source .venv/bin/activate  # .venv\Scripts\activate sous Windows
 pip install zensical
-zensical build -f zensical.toml
-zensical serve -f zensical.toml # serve at http://localhost:8000
+zensical serve             # sert le site sur http://localhost:8000
 ```
 
-## Configuration
+## Ajouter ou modifier une page
 
-Le site est configuré en utilisant le fichier de configuration `zensical.toml`.
+1. Créer ou modifier le fichier Markdown sous `docs/`.
+2. Pour une nouvelle page, l'ajouter dans `nav` du fichier `zensical.toml`.
+3. Vérifier le rendu avec `make serve`, puis `make lint-md` et `make build`.
+
+Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour plus de détails.
+
+## Structure
+
+- `docs/` : contenu de la documentation (Markdown, images)
+- `overrides/` : surcharges du thème (bandeau d'annonce)
+- `zensical.toml` : configuration du site et navigation
