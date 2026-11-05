@@ -6,7 +6,6 @@ site_dir = "site"
 site_url = "https://docs.agoracalyce.net"
 repo_url = "https://github.com/agora-calyce/docs"
 repo_name = "agora-calyce/docs"
-edit_uri = "edit/main/docs/"
 copyright = "Copyright &copy; 2026 Agora Calyce"
 extra_css = ["assets/styles/extra.css"]
 
