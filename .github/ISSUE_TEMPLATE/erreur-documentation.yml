@@ -1,0 +1,29 @@
+name: Erreur dans la documentation
+description: Une page contient une information fausse, obsolète ou peu claire.
+title: "[Erreur] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ne jamais inclure d'informations sensibles (identifiants, tokens, adresses IP réelles, noms de clients).
+  - type: input
+    id: page
+    attributes:
+      label: Page concernée
+      description: URL ou chemin du fichier sous `docs/`.
+      placeholder: https://docs.agoracalyce.net/...
+    validations:
+      required: true
+  - type: textarea
+    id: probleme
+    attributes:
+      label: Problème
+      description: Ce qui est faux, obsolète ou peu clair.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correction proposée
+      description: Facultatif. Capture d'écran bienvenue.
