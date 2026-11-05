@@ -1,0 +1,21 @@
+name: Nouvelle page ou contenu manquant
+description: Proposer un guide, une page ou une section à ajouter.
+title: "[Contenu] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: sujet
+    attributes:
+      label: Sujet à documenter
+    validations:
+      required: true
+  - type: textarea
+    id: public
+    attributes:
+      label: Besoin
+      description: Qui en a besoin et pourquoi ?
+  - type: input
+    id: emplacement
+    attributes:
+      label: Emplacement suggéré
+      description: Section de la navigation, si pertinent.
