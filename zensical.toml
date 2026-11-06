@@ -89,7 +89,6 @@ features = [
   "search.share",
   "content.code.copy",
   "content.code.annotate",
-  "content.action.edit",
   "content.tabs.link",
   "content.tooltips",
 ]
